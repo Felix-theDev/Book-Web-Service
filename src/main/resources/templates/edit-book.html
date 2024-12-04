@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Book</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Edit Book</h1>
+
+    <div class="navigation-buttons">
+        <a href="/books"><button class="btn">Go to Book List</button></a>
+        <a href="/books/add"><button class="btn btn-primary">Add New Book</button></a>
+    </div>
+
+    <form th:action="@{'/books/edit/' + ${book.id}}" method="post" th:object="${book}">
+
+        <!-- Name Field -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" required />
+        <div th:errors="*{name}" class="error"></div>
+
+        <!-- ISBN Field -->
+        <label for="isbn">ISBN:</label>
+        <input type="text" id="isbn" th:field="*{isbn}" required />
+        <div th:errors="*{isbn}" class="error"></div>
+
+        <!-- Publish Date Field -->
+        <label for="publishDate">Publish Date:</label>
+        <input type="date" id="publishDate" th:value="*{publishDate}" th:field="*{publishDate}" required />
+        <div th:errors="*{publishDate}" class="error"></div>
+
+        <!-- Price Field -->
+        <label for="price">Price:</label>
+        <div class="currency-input">
+            <span class="currency-label">ZAR</span>
+            <input type="number" id="price" th:field="*{price}" step="1" required />
+        </div>
+        <div th:errors="*{price}" class="error"></div>
+
+
+        <!-- Book Type Field -->
+        <label for="bookType">Book Type:</label>
+        <select id="bookType" th:field="*{bookType}" required>
+            <option value="HARDCOVER">Hardcover</option>
+            <option value="SOFTCOVER">Softcover</option>
+            <option value="EBOOK">eBook</option>
+        </select>
+        <div th:errors="*{bookType}" class="error"></div>
+
+        <!-- Submit Button -->
+        <button type="submit">Update</button>
+    </form>
+</div>
+</body>
+</html>
