@@ -45,19 +45,19 @@ Open a browser and visit: http://localhost:8081/books.
 This service provides a user-friendly interface to interact with the Book Management System.
 
 Available Actions
-View All Books: Visit http://localhost:8081/books to see a list of all books.
-Add a New Book: Click on the "Add New Book" button or visit http://localhost:8081/books/add.
-Edit a Book: Use the "Edit" button next to a book in the list.
-Delete a Book: Use the "Delete" button next to a book in the list.
+i) View All Books: Visit http://localhost:8081/books to see a list of all books
+ii) Add a New Book: Click on the "Add New Book" button or visit http://localhost:8081/books/add.
+iii) Edit a Book: Use the "Edit" button next to a book in the list.
+iv) Delete a Book: Use the "Delete" button next to a book in the list.
 
 
 2. Management Service API
 The Web Service communicates with the Management Service API. Advanced users can directly interact with the API:
 
-List All Books: GET http://localhost:8080/books/getAllBooks
-Add a Book: POST http://localhost:8080/books/addBook
-Edit a Book: PUT http://localhost:8080/books/updateBook/{id}
-Delete a Book: DELETE http://localhost:8080/books/deleteBook/{id}
+i) List All Books: GET http://localhost:8080/books/getAllBooks
+ii) Add a Book: POST http://localhost:8080/books/addBook
+iii) Edit a Book: PUT http://localhost:8080/books/updateBook/{id}
+iv) Delete a Book: DELETE http://localhost:8080/books/deleteBook/{id}
 Note: All Web Service operations depend on the Management Service being active.
 
 Key Notes
